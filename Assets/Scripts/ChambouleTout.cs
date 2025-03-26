@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class ChambouleTout : MonoBehaviour
 {
+    // Rotation Settings
+    [SerializeField] private float _lookSpeed = 2f;
+    [SerializeField] private float _lookXTopLimit = 55f;
+    [SerializeField] private float _lookXBotLimit = 55f;
+    private float rotationX = 0f;
+    private float rotationY = 0f;
+    [SerializeField] private Camera _playerCamera;
     
     [SerializeField] private GameObject throwable;
     [SerializeField] private Transform hand;
@@ -11,10 +18,30 @@ public class ChambouleTout : MonoBehaviour
     private float _pressedTimer = 0;
     private bool _launch = false; //bool is true or false
     
+    // Start is called before the first frame update
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    
 
     // Update is called once per frame
     void Update()
     {
+        
+        // Rotation verticale (X)
+        rotationX += -Input.GetAxis("Mouse Y") * _lookSpeed;
+        rotationX = Mathf.Clamp(rotationX, -_lookXBotLimit, _lookXTopLimit);
+
+        // Rotation horizontale (Y)
+        rotationY += Input.GetAxis("Mouse X") * _lookSpeed;
+        rotationY = Mathf.Clamp(rotationY, -_lookXBotLimit, _lookXTopLimit);
+
+        // Appliquer la rotation sur la caméra et le joueur
+        _playerCamera.transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
+        transform.rotation = Quaternion.Euler(0, rotationY, 0);
+        
         //incrémenter une puissance quand j'appuie sur le boutton de la souris
         if (Input.GetMouseButton(0))
         {

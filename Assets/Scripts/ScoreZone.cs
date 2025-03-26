@@ -17,6 +17,11 @@ public class ScoreZone : MonoBehaviour
         if (other.tag == "ChambouleCube")
         {
             _score++;
+            Destroy(other.gameObject);
+        }
+        else if (other.tag == "Ball")
+        {
+            Destroy(other.gameObject);
         }
     }
 

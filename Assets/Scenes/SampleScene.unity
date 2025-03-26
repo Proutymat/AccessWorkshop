@@ -586,6 +586,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1404089908}
+  - {fileID: 908158749}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
@@ -1726,6 +1727,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &908158748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 908158749}
+  m_Layer: 0
+  m_Name: hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &908158749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908158748}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 330585546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &923239557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,11 +2334,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004077725}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1404089907 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4001008588586449452, guid: fae8265ca53155c40a8ff6e8810ff7c4, type: 3}
-  m_PrefabInstance: {fileID: 8636452028104572828}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1404089908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5780989663136187900, guid: fae8265ca53155c40a8ff6e8810ff7c4, type: 3}
@@ -2594,6 +2621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1767161135}
   - component: {fileID: 1767161134}
+  - component: {fileID: 1767161136}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2613,7 +2641,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c47bf0662d30f14284442039c1938ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwable: {fileID: 1404089907}
+  _lookSpeed: 2
+  _lookXTopLimit: 15
+  _lookXBotLimit: 20
+  _playerCamera: {fileID: 330585545}
+  throwable: {fileID: 4001008588586449452, guid: fae8265ca53155c40a8ff6e8810ff7c4, type: 3}
   hand: {fileID: 330585546}
   weight: 1000
 --- !u!4 &1767161135
@@ -2631,6 +2663,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &1767161136
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767161133}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1807316119
 GameObject:
   m_ObjectHideFlags: 0
