@@ -26,7 +26,6 @@ public class ChambouleTout : MonoBehaviour
     [SerializeField] private GameObject _config5;
     [SerializeField] private List<Material> _materials;
     
-    [SerializeField] private GameManager _gameManager;
     
     private float _puissance; //float est nombre decimal 
     private float _pressedTimer = 0;
@@ -160,7 +159,6 @@ public class ChambouleTout : MonoBehaviour
             int config = Random.Range(1, 5);
             GenerateChambouleTout(config);
             Debug.Log("CONFIG = " + config);
-            
         }
 
     }

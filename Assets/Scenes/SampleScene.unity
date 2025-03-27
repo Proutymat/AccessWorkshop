@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 92199933}
   - component: {fileID: 92199932}
   - component: {fileID: 92199931}
+  - component: {fileID: 92199935}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -360,6 +361,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &92199935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92199930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383b2510b0fa03248806b4bfa04e23d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &101277326
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,8 +2285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74db131c9de44bb419a2e5c1e24162e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreText: {fileID: 1123605491}
-  _timerText: {fileID: 572219780}
   _gameManager: {fileID: 1580222381}
 --- !u!1 &1047058674
 GameObject:
@@ -3242,6 +3253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1580222382}
   - component: {fileID: 1580222381}
+  - component: {fileID: 1580222383}
   m_Layer: 0
   m_Name: GAMEMANAGER
   m_TagString: Untagged
@@ -3261,6 +3273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7def8329edd1a458ec9b674a3b2b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scoreText: {fileID: 1123605491}
+  _timerText: {fileID: 572219780}
 --- !u!4 &1580222382
 Transform:
   m_ObjectHideFlags: 0
@@ -3276,6 +3290,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1580222383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580222380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383b2510b0fa03248806b4bfa04e23d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1607773025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,7 +3499,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 88e81157ba3c1e948b6660b09a8a3565, type: 2}
   - {fileID: 2100000, guid: 7d10fa851633d1948b7270b5c77b0c91, type: 2}
   - {fileID: 2100000, guid: 33302b1d4e4f89644875594d2af9bb32, type: 2}
-  _gameManager: {fileID: 1580222381}
 --- !u!4 &1767161135
 Transform:
   m_ObjectHideFlags: 0
