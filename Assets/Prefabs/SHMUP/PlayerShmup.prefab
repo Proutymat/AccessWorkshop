@@ -62,7 +62,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.68, y: 0, z: -0.2}
-  m_LocalScale: {x: 1.7, y: 0.8, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 0.000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2004255319236775776}
@@ -99,7 +99,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: a18a487644db5914e8eecbb026781f43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,6 +157,9 @@ MonoBehaviour:
   speed: 5
   projectile: {fileID: 5082676806602652288, guid: 1678172bb56fa67489de8cc46ac344b3, type: 3}
   projectileSpawn: {fileID: 2004255319236775776}
+  vie: 0
+  score: 0
+  gameManager: {fileID: 0}
 --- !u!54 &-4279362342844360588
 Rigidbody:
   m_ObjectHideFlags: 0

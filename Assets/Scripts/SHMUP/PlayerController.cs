@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public int score;
     
     [SerializeField] GameManager gameManager;
+    [SerializeField] List<Material> _materials;
+
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -62,6 +66,10 @@ public class PlayerController : MonoBehaviour
         
         Projectile  projectileScript = projectileInstance.GetComponent<Projectile>();
         projectileScript.player = this;
+        
+        Material randomMaterial = _materials[Random.Range(0, _materials.Count)];
+        Renderer renderer = projectileInstance.GetComponent<Renderer>();
+        renderer.material = randomMaterial;
     }
 
     private void OnTriggerEnter(Collider other)

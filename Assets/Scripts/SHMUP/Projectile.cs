@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -8,6 +9,7 @@ public class Projectile : MonoBehaviour
     public PlayerController player;
     
     [SerializeField] GameManager gameManager;
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
 public class manage : MonoBehaviour
@@ -14,6 +15,9 @@ public class manage : MonoBehaviour
     
     public Transform[] spawnpoints;
     public GameObject ennemy;
+    
+    [SerializeField] private List<Material> _materials;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,7 +43,14 @@ public class manage : MonoBehaviour
     private void Spawn()
     {
         int  x = Random.Range(0, spawnpoints.Length);
-        Instantiate(ennemy, spawnpoints[x].position, ennemy.transform.rotation);
+        GameObject newEnemy = Instantiate(ennemy, spawnpoints[x].position, ennemy.transform.rotation);
+        
+        Material randomMaterial = _materials[Random.Range(0, _materials.Count)];
+        Renderer renderer = newEnemy.GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            renderer.material = randomMaterial;
+        }
     }
 
     private IEnumerator SpawnEnnemies()
