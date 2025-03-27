@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] GameManager gameManager;
     [SerializeField] List<Material> _materials;
-
-    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -28,11 +26,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+
+        if (Input.GetKey(Settings.moveLeft))
+        {
+            transform.position += Vector3.left * Time.deltaTime * speed;
+        }
+
+        if (Input.GetKey(Settings.moveRight))
+        {
+            transform.position += Vector3.right * Time.deltaTime * speed;
+        }
+
+        if (Input.GetKey(Settings.moveUp))
+        {
+            transform.position += Vector3.up * Time.deltaTime * speed;
+        }
+
+        if (Input.GetKey(Settings.moveDown))
+        {
+            transform.position += Vector3.down * Time.deltaTime * speed;
+        }
         
-        Vector3 movement = new Vector3(h, v, 0);
-        transform.Translate(movement * speed * Time.deltaTime);
         
         if (transform.position.y > 6.3f)
         {
@@ -54,7 +68,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(-9.2f, transform.position.y, transform.position.z);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(Settings.shoot))
         {
             Shoot();
         }
