@@ -6,6 +6,8 @@ public class managerPuzzle : MonoBehaviour
     public GameObject[] puzzlePieces = new GameObject[8];
     public Emplacements[] emplacements = new Emplacements[9];
     
+    [SerializeField] GameManager gameManager;
+    
     int emplacementAChanger;
     private GameObject pieceABouger;
 
@@ -73,6 +75,7 @@ public class managerPuzzle : MonoBehaviour
                 if (CheckVictory())
                 {
                     Debug.Log("Victory");
+                    gameManager.AddScore(200);
                 }
             }
             else

@@ -71,10 +71,15 @@ public class GameManager : MonoBehaviour
         _timer = 120;
      
         Debug.Log("Current Game = " + _currentGame);
+        
         if (_currentGame == 1)
             SceneManager.LoadScene("Shmup");
         else if (_currentGame == 2)
             SceneManager.LoadScene("Puzzle");
+        else if (_currentGame == 3)
+        {
+            Debug.Log("Game Over");
+        }
     }
 
     private void Update()
