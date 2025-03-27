@@ -79,6 +79,9 @@ public class GameManager : MonoBehaviour
         else if (_currentGame == 3)
         {
             Debug.Log("Game Over");
+            _currentGame = 0;
+            SceneManager.LoadScene("MainMenu");
+            
         }
     }
 
