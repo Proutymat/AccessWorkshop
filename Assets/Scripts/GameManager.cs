@@ -56,15 +56,24 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        _timer -= Time.deltaTime;
+        if (_score < 0)
+            _score = 0;
         
         _scoreText.text = _score.ToString();
-       
+        
+        _timer -= Time.deltaTime;
+
+        if (_timer <= 0)
+        {
+            NextGame();
+        }
+        
         // Calcul du temps en minutes et secondes
         int minutes = Mathf.FloorToInt(_timer / 60);
         int seconds = Mathf.FloorToInt(_timer % 60);
 
         // Affichage du timer formaté
         _timerText.text = $"{minutes:00}:{seconds:00}";
+        
     }
 }

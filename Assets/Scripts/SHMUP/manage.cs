@@ -22,7 +22,7 @@ public class manage : MonoBehaviour
         gameOver.gameObject.SetActive(false);
         StartCoroutine(SpawnEnnemies());
     }
-
+/*
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +34,8 @@ public class manage : MonoBehaviour
             StartCoroutine(GameOver());
         }
     }
-
+    */
+    
     private void Spawn()
     {
         int  x = Random.Range(0, spawnpoints.Length);

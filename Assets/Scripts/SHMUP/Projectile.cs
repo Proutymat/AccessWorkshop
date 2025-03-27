@@ -6,10 +6,14 @@ public class Projectile : MonoBehaviour
     public float speed;
     private Rigidbody rb;
     public PlayerController player;
+    
+    [SerializeField] GameManager gameManager;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        gameManager = GameObject.Find("GAMEMANAGER").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("touché");
             player.score += 1;
+            gameManager.AddScore(1);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }

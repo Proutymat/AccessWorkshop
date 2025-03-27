@@ -10,11 +10,15 @@ public class PlayerController : MonoBehaviour
     public int vie;
     public int score;
     
+    [SerializeField] GameManager gameManager;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         vie = 3;
         score = 0;
+        
+        gameManager = GameObject.Find("GAMEMANAGER").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -67,6 +71,7 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             vie -= 1;
             score += 1;
+            gameManager.AddScore(1);
         }
         else
         {
@@ -74,6 +79,7 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 vie -= 1;
+                gameManager.AddScore(-1);
             }
         }
     }

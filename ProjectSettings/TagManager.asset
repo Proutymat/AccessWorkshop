@@ -6,6 +6,10 @@ TagManager:
   tags:
   - ChambouleCube
   - Ball
+  - EnnemyBullet
+  - Bullet
+  - Ennemy
+  - GameManager
   layers:
   - Default
   - TransparentFX
