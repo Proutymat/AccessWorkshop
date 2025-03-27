@@ -7,6 +7,7 @@ public class ScoreZone : MonoBehaviour
     private int _score;
     [SerializeField] private TextMeshProUGUI _scoreText;
     [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] private GameManager _gameManager;
     
     private float _timer;
 
@@ -21,6 +22,7 @@ public class ScoreZone : MonoBehaviour
         if (other.tag == "ChambouleCube")
         {
             _score++;
+            _gameManager.AddScore(_score);
             Destroy(other.gameObject);
         }
         else if (other.tag == "Ball")

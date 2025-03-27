@@ -26,6 +26,8 @@ public class ChambouleTout : MonoBehaviour
     [SerializeField] private GameObject _config5;
     [SerializeField] private List<Material> _materials;
     
+    [SerializeField] private GameManager _gameManager;
+    
     private float _puissance; //float est nombre decimal 
     private float _pressedTimer = 0;
     private bool _launch = false; //bool is true or false
