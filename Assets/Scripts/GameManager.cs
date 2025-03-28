@@ -68,6 +68,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            NextGame();
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            AddScore(1);
+        }
         
         
         if (_score < 0)
