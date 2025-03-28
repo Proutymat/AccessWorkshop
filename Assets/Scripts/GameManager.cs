@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Over");
             _currentGame = 0;
             SceneManager.LoadScene("MainMenu");
+            Destroy(this.gameObject.GetComponent<DontDestroyOnLoad>());
             Destroy(this.gameObject);
         }
     }
