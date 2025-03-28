@@ -30,6 +30,11 @@ public class ChambouleTout : MonoBehaviour
     private float _puissance; //float est nombre decimal 
     private float _pressedTimer = 0;
     private bool _launch = false; //bool is true or false
+
+    public GameObject[] sons;
+
+    private AudioSource enceinte;
+
     
     
     // Start is called before the first frame update
@@ -37,6 +42,7 @@ public class ChambouleTout : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        enceinte = GetComponent<AudioSource>();
     }
     
     void DestroyAllChildren(GameObject parent)
@@ -144,6 +150,16 @@ public class ChambouleTout : MonoBehaviour
             _puissance = _pressedTimer * weight;
             _pressedTimer = 0;
             _launch = true;
+
+            int index = Random.Range(0, 13);
+
+            Debug.Log(index);
+            sons[index].SetActive(true);
+            enceinte.clip = sons[index].transform.GetChild(0).GetComponent<Subtitle>().son;
+
+            Debug.Log(sons[index].ToString());
+            
+            enceinte.Play();
         }
     }
     

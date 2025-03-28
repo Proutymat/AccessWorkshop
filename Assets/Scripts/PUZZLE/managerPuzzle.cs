@@ -13,10 +13,14 @@ public class managerPuzzle : MonoBehaviour
 
     private bool enMouvement;
     private float speed = 2f;
+    private float timer;
+    private AudioSource enceinte;
+    public AudioClip[] sons;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        enceinte = GetComponent<AudioSource>();
         StartCoroutine(Melanger());
         enMouvement = false;
     }
@@ -47,8 +51,11 @@ public class managerPuzzle : MonoBehaviour
                            emplacementAChanger = i;
                        }
                    }
-
+                   int rand = Random.Range(0,19);
+                   enceinte.clip = sons[rand];
+                   enceinte.Play();
                    enMouvement = true;
+                   timer += Time.deltaTime;
                }
             }
         }
@@ -69,6 +76,7 @@ public class managerPuzzle : MonoBehaviour
             else if (pieceABouger.transform.position == emplacements[GetGap()].transform.position)
             {
                 enMouvement = false;
+                timer = 0;
                 pieceABouger = null;
                 emplacements[GetGap()].Occuper();
                 emplacements[emplacementAChanger].Desoccuper();
@@ -84,7 +92,18 @@ public class managerPuzzle : MonoBehaviour
             }
 
             
-            
+            if(timer != 0)
+            {
+                if(timer > 3f)
+                {
+                    timer = 0;
+                    enMouvement = false;
+                }
+                else
+                {
+                    timer += Time.deltaTime;
+                }
+            }
             
             
         }
@@ -103,7 +122,7 @@ public class managerPuzzle : MonoBehaviour
                 puzzlePieces[i].transform.position = emplacements[rand].transform.position;
                 emplacements[rand].Occuper();
                 //teest();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.2f);
                 i++;
         }
         yield return null;

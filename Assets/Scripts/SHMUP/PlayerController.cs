@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     
     public int vie;
     public int score;
+
+    public AudioClip[] sons;
+    private AudioSource enceinte;
     
     [SerializeField] GameManager gameManager;
     [SerializeField] List<Material> _materials;
@@ -19,6 +22,8 @@ public class PlayerController : MonoBehaviour
     {
         vie = 3;
         score = 0;
+
+        enceinte = GetComponent<AudioSource>();
         
         gameManager = GameObject.Find("GAMEMANAGER").GetComponent<GameManager>();
     }
@@ -70,6 +75,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(Settings.shoot))
         {
+            int rand = Random.Range(0,12);
+            enceinte.clip = sons[rand];
+            enceinte.Play();
             Shoot();
         }
     }

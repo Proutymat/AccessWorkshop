@@ -13,7 +13,7 @@ public class Subtitle : MonoBehaviour
         Debug.Log(transform.position);
     }
 
-    void Awake()
+    void OnEnable()
     {
         StartCoroutine(Soustitre());
     }
