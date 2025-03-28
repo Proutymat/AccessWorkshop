@@ -12,13 +12,13 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-         playlist = audioSource.GetComponent<enceinteMenu>().sons;
-       
-        if (playlist.Length > 0)
-        {
-            PlayTrack(currentTrackIndex);
-            StartCoroutine(CheckMusicEnd());
-        }
+        /*playlist = audioSource.GetComponent<enceinteMenu>().sons;
+
+       if (playlist.Length > 0)
+       {
+           PlayTrack(currentTrackIndex);
+           StartCoroutine(CheckMusicEnd());
+       }*/
     }
 
     void PlayTrack(int index)
@@ -49,15 +49,15 @@ public class MainMenu : MonoBehaviour
         PlayTrack(currentTrackIndex);
     }
 
-   public void StartGame()
-   {
-      SceneManager.LoadScene(1);
-   }
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
 
-   public void QuitGame()
-   {
-      Application.Quit();
-   }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
    
 }
