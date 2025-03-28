@@ -23,6 +23,8 @@ public class managerPuzzle : MonoBehaviour
         enceinte = GetComponent<AudioSource>();
         StartCoroutine(Melanger());
         enMouvement = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
