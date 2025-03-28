@@ -140,8 +140,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1527764.4}
+  m_Center: {x: 0, y: 0, z: -67375.336}
 --- !u!114 &236489876390220256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,9 @@ MonoBehaviour:
   projectileSpawn: {fileID: 2004255319236775776}
   vie: 0
   score: 0
+  sons: []
   gameManager: {fileID: 0}
+  _materials: []
 --- !u!54 &-4279362342844360588
 Rigidbody:
   m_ObjectHideFlags: 0
