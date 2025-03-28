@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     
     private float _timer;
     
-    public Toggle windowedToggle; // Associe un Toggle de l'UI
 
     [Button]
     public void ToggleGodMode()
@@ -29,27 +28,9 @@ public class GameManager : MonoBehaviour
         _godModeOn = !_godModeOn;
     }
 
-    void SetWindowedMode(bool isWindowed)
-    {
-        if (isWindowed)
-        {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
-            Screen.SetResolution(1920, 1080, false); // Met une résolution adaptée
-        }
-        else
-        {
-            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
-            Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
-        }
-    }
     
     void Start()
     {
-        /*
-        _isWindowed = false;
-        windowedToggle.isOn = _isWindowed;
-        SetWindowedMode(_isWindowed);
-        windowedToggle.onValueChanged.AddListener(SetWindowedMode);*/
         
         _score = 0;
         _timer = 120;
@@ -81,17 +62,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Over");
             _currentGame = 0;
             SceneManager.LoadScene("MainMenu");
-            
+            Destroy(this.gameObject);
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F11))
-        {
-            _isWindowed = !_isWindowed;
-            SetWindowedMode(_isWindowed);
-        }
         
         
         if (_score < 0)
